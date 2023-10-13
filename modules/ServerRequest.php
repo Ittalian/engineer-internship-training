@@ -51,7 +51,7 @@ class ServerRequest
      */
     public function getData(?string $key = null)
     {
-        if ($key) {
+        if ($key && isset($this->_data[$key])) {
             return $this->_data[$key];
         }
 

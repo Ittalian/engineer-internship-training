@@ -46,6 +46,9 @@ class Post
     {
         // 未実装
         // 応用課題:投稿削除機能
+        $pdo = $this->dbConnect();
+        $query = "DELETE FROM `posts` WHERE `id`=$id";
+        $pdo->query($query);
     }
 
     /**

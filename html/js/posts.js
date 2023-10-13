@@ -38,7 +38,7 @@ const updatePost = (self) => {
 // Ajaxで投稿を削除する
 const deletePost = (self) => {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/Post/edit');
+    xhr.open('POST', '/Post/delete');
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     // 更新後の投稿情報を取得
     const post_object = self.parentNode.parentNode;
@@ -47,7 +47,7 @@ const deletePost = (self) => {
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            alert(xhr.responseText);
+            // alert(xhr.responseText);
             post_object.parentNode.remove();
         }
     }
