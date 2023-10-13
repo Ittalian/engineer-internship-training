@@ -30,6 +30,8 @@ class PostsController extends AppController
         $posts = $post->fetch();
         $this->assign('posts', $posts);
 
+        // var_dump($posts);
+
         $this->show('Posts/index.php');
 
         return;
