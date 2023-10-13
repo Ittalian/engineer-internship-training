@@ -19,7 +19,7 @@
 
 <body>
     <div class="header">
-        <span>N（ベータバージョン）</span>
+        <span><?= $this->get('pageTitle') ?></span>
     </div>
 
     <br>

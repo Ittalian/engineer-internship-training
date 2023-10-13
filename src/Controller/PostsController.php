@@ -23,6 +23,9 @@ class PostsController extends AppController
         $pageName = 'HOME / N（ベータバージョン）';
         $this->assign('pageName', $pageName);
 
+        $pageTitle = 'My掲示板';
+        $this->assign('pageTitle', $pageTitle);
+
         $post = new Post();
         $posts = $post->fetch();
         $this->assign('posts', $posts);
