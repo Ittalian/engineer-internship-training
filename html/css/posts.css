@@ -36,6 +36,18 @@
     justify-content: center;
 }
 
+.created-at {
+    text-align: right;
+    /* display: flex; */
+    width: 50%;
+    padding: 0 10px;
+}
+
+.name-and-message {
+    width: 50%;
+    padding: 0 10px;
+}
+
 /* 投稿に関するCSS */
 .post {
     display: flex;
@@ -63,7 +75,7 @@
 .post-info {
     position: relative;
     width: 100%;
-    /* text-align: center; */
+    display: flex;
 }
 
 .post-action {
