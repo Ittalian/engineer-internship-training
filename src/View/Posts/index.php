@@ -27,7 +27,7 @@
     <div class="content">
         <div>
             <!-- 投稿フォーム -->
-            <form method="POST" action="/Posts/create" class="post-form">
+            <!-- <form method="POST" action="/Posts/create" class="post-form"> -->
                 <div class="post-form-name">
                     <h4>名前</h4>
                     <input type="text" id="name" name="name" class="post-form-name-input" placeholder="あなたの名前を入力してください。" maxlength="30" required>
@@ -39,13 +39,29 @@
 
                 <div class="post-form-submit">
                     <button type="submit" class="post-form-submit-button">投稿</button>
+                    <button type="button" class="post-btn" onclick="doPost(this)">投稿</button>
                 </div>
-            </form>
+            <!-- </form> -->
             <hr>
             <!-- 投稿一覧 -->
         <div class="posts-area">
             <div class="posts">
                 <?php if ($this->get('posts')) : ?>
+                            <div class="post-icon">
+                                <img src="/imgs/egg_purple.png" class="post-image" alt="egg_icon">
+                            </div>
+                            <div class="post-info" data-id="">    
+                                <div class="name-and-message">
+                                    <input type="text" class="post-name post-not-edit-input" value="" readonly><br>
+                                    <textarea class="post-text post-not-edit-textarea" readonly></textarea>
+                                </div>
+                                    <p class="created-at">
+                                    </p>
+                                <div class="post-action">
+                                    <button type="button" class="post-action-btn edit-btn" onclick="editPost(this)">✒️編集</button>
+                                    <button type="button" class="post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
+                                </div>
+                            </div>
                     <?php foreach ($this->get('posts') as $post) : ?>
                         <!-- 投稿カード -->
                         <div class="post">
@@ -73,7 +89,7 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <span>まだ何も投稿されていません</span>
+                    <span class="no-post">まだ何も投稿されていません</span>
                 <?php endif; ?>
             </div>
         </div>

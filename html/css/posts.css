@@ -5,12 +5,24 @@
     font-size: xx-large;
     color: rgb(66, 62, 196);
     text-align: center;
-    border-bottom: solid 2px;
     padding: 10px 0;
 }
 
+body {
+    background-image: url('../imgs/homeWindow-bg.png')
+}
+
 .post-form {
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.post-form-name {
+    margin-bottom: 10px;
+}
+
+.post-form-message {
+    margin-bottom: 10px;
 }
 
 .post-form-name-input {
@@ -18,12 +30,11 @@
 }
 
 .post-form-message-text {
-    width: 20%;
+    width: 50%;
 }
 
-.post-form-submit-button {
+.post-form-submit-button, .post-action-btn  {
     border-color: yellow;
-    border-radius: 100;
     background-color: yellow;
 }
 
@@ -48,13 +59,27 @@
     padding: 0 10px;
 }
 
+.no-post{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
 /* 投稿に関するCSS */
 .post {
     display: flex;
     /* text-align: center; */
     border: solid;
     margin: 15px 0;
+    background-color: rgb(236, 160, 160);
 }
+
+.default-post {
+    display: flex;
+    border: solid;
+    margin: 15px 0;
+    background-color: rgb(236, 160, 160);
+}   
 
 .post-icon {
     width: 120px;

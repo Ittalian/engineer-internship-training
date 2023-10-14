@@ -20,7 +20,7 @@ class PostsController extends AppController
      */
     public function index(): void
     {
-        $pageName = 'HOME / N（ベータバージョン）';
+        $pageName = 'My掲示板';
         $this->assign('pageName', $pageName);
 
         $pageTitle = 'My掲示板';
@@ -50,7 +50,7 @@ class PostsController extends AppController
         $post = new Post();
         $post->save($name, $message);
 
-        header('Location: /');
+        // header('Location: /');
     }
 
     /**

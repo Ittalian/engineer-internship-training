@@ -11,6 +11,9 @@ const editPost = (self) => {
 
 // Ajaxで投稿を更新する
 const updatePost = (self) => {
+    // alert(document.querySelector('.post-name').value);
+    // alert(document.querySelector('.post-text').value);
+    // alert(document.querySelector('.post-form-name-input').value);
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/Post/edit');
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
@@ -49,6 +52,24 @@ const deletePost = (self) => {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             // alert(xhr.responseText);
             post_object.parentNode.remove();
+        }
+    }
+}
+
+const doPost = (self) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/Post/create');
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    // alert(document.getElementById('name').value);
+    // alert(document.getElementById('message').value);
+    const post_object = self.parentNode.parentNode;
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+    xhr.send(`id=${post_object.dataset.id}&name=${name}&message=${message}`);
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            alert("投稿が完了しました。");
         }
     }
 }
